@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.hero-banner{
+  height: 70px;
+  width: 100%;
+  object-fit: contain;
+  background-image: url("../images/02-hero-bg.jpg");
+  background-repeat: no-repeat;
+}
+
+.hero-banner h2{
+  margin: 30px;
+  float: right;
+  color: rgb(9, 22, 66);
+  background-color: turquoise;
+}
+.page-section{
+  margin: 10px;
+}
