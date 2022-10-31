@@ -22,10 +22,17 @@ p {
   margin: 0;
 }
 
+nav{
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 10px;
+}
+
 .hero-banner{
   height: 70px;
   width: 100%;
-  object-fit: contain;
+  object-fit: scale-down;
   background-image: url("../images/02-hero-bg.jpg");
   background-repeat: no-repeat;
 }
@@ -38,4 +45,49 @@ p {
 }
 .page-section{
   margin: 10px;
+}
+
+.work{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+}
+
+.projects{
+  display: grid;
+  border: 10px;
+  border-color: blue;
+  justify-content: space-around;
+}
+
+article img{
+  height: 70px;
+  width: 70px;
+}
+
+main{
+  padding: 10px;
+  margin: 10px;
+}
+
+main section{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2px;
+  border-style: solid;
+  border-color:rgb(230, 6, 6);
+  padding: 2px;
+}
+
+main h2{
+  width: 15%;
+  padding: 5px;
+}
+
+.divider{
+  height: 70px;
+  width: 5px;
+  background-color: blueviolet;
+  margin: 3px;
 }
