@@ -2,8 +2,8 @@
   --colour-darker: rgb(24, 34, 37);
   --colour-dark: rgb(23, 82, 105);
   --colour-light: rgb(44, 153, 193);
-  --big-font: 3.5rem;
-  --medium-font: 3rem;
+  --big-font: 3.2rem;
+  --medium-font: 2.8rem;
   --small-font: 1rem;
 }
 
@@ -60,11 +60,11 @@ nav a{
 .hero-banner{
   /* container attributes */
   height: 35vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  /* content attributes */
+  /* background attributes */
   background-image: url("../images/02-hero-bg.jpg");
   background-size: cover;
   background-position: left center;
@@ -105,7 +105,7 @@ main {
 }
 
 /* sets proportion of title vs. content */
-.section__item--title{
+.section__item--title {
   padding-left: 5%;
   flex: 1;
   order: -1; /* reorder flex item to make separator appear between section items */
@@ -117,7 +117,6 @@ main {
 
 /* other */
 main h2 {  
-  /* padding: 1vh; */
   font-weight: bold;
   color: var(--colour-dark);
   text-align: right;
@@ -126,32 +125,73 @@ main h2 {
 
 .work {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
   justify-content: space-evenly;
 }
 
-#projects {
+/* define project grid*/
+.projects {
   display: grid;
-  border: 1px;
-  justify-content: space-around;
+  width: 100%;
+  height: calc(7*var(--big-font));
+  grid-template-columns: 1fr, 1fr;
+  grid-template-rows: 2fr, 1fr, 1fr;
+  grid-gap: 1%;
+  grid-template-areas: "project1 project1"
+                       "project1 project1"
+                       "project2 project3"
+                       "project4 project5";
 }
 
-.projects{
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+.project1{
+  grid-area: project1;
 }
 
-.project {
-  border-style: solid; border-color: deeppink; border: 2px;
+.project2{
+  grid-area: project2;
+}
+
+.project3{
+  grid-area: project3;
+}
+
+.project4{
+  grid-area: project4;
+}
+
+.project5{
+  grid-area: project5;
+}
+
+article {
+  position: relative;
+  overflow: hidden;
 }
 
 article img {
-  height: 50vh;
-  width: 50vh;
+  width: 100%;
+  height: auto;
 }
 
-#contacts {
+.project-textbox{
+  background-color: var(--colour-light);
+  padding: 2%;
+  position: absolute;
+  bottom: var(--small-font);
+  left: var(--smedium-font);
+  color: var(--colour-darker);
+  text-align: left;
+}
+
+.project-title {
+  font-size: 80%;
+}
+
+.project-subtitle {
+  font-size: 60%;
+}
+
+.contacts {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -186,7 +226,7 @@ article img {
       flex-direction: column;
   }
 
-  #contacts {
+  .contacts {
     align-items: center;
     flex-direction: column;
   }
