@@ -1,7 +1,7 @@
 :root{ /*set up variables to be used throughout the CSS*/
-  --colour-darker: rgb(24, 34, 37);
-  --colour-dark: rgb(23, 82, 105);
-  --colour-light: rgb(44, 153, 193);
+  --colour-darker: rgb(122,96,81);
+  --colour-dark: rgb(90,172,217);
+  --colour-light: rgb(107,203,255);
   --big-font: 3.2rem;
   --medium-font: 2.8rem;
   --small-font: 1rem;
@@ -65,10 +65,11 @@ nav a{
   align-items: flex-end;
   justify-content: flex-end;
   /* background attributes */
-  background-image: url("../images/02-hero-bg.jpg");
-  background-size: cover;
-  background-position: left center;
+  background-image: url("../images/02-lo-bg.jpg");
+  background-size: contain;
+  background-position: right center;
   background-repeat: no-repeat;
+  background-color: rgb(220, 221, 222);
 }
 
 .hero-banner h2{
