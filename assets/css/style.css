@@ -43,7 +43,7 @@ nav{
   flex: 5; /* in relation to parent flex */
   display: flex;
   align-self: stretch;
-  justify-content: flex-end;
+  justify-content: safe flex-end;
   align-items: flex-end;
   gap: var(--small-font);
   padding: 1.5rem;
@@ -99,7 +99,7 @@ main {
 
 .page-section:before { /* adds responsive section separator */
   content: "";
-  border: 0.3rem solid var(--colour-dark);
+  border: 0.3em solid var(--colour-dark);
   background-color: var(--colour-dark);
   align-self: stretch;
 }
@@ -107,26 +107,18 @@ main {
 /* sets proportion of title vs. content */
 .section__item--title {
   padding-left: 5%;
-  flex: 1;
+  flex: 10%;
   order: -1; /* reorder flex item to make separator appear between section items */
-}
-
-.section__item--content{
-  flex: 4;
-}
-
-/* other */
-main h2 {  
+  /* font style set-up*/
   font-weight: bold;
   color: var(--colour-dark);
   text-align: right;
   font-size: var(--big-font);
 }
 
-.work {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-evenly;
+.section__item--content{
+  flex: 40%;
+  text-align: justify;
 }
 
 /* define project grid*/
@@ -134,9 +126,7 @@ main h2 {
   display: grid;
   width: 100%;
   height: calc(7*var(--big-font));
-  grid-template-columns: 1fr, 1fr;
-  grid-template-rows: 2fr, 1fr, 1fr;
-  grid-gap: 1%;
+  gap: 1%;
   grid-template-areas: "project1 project1"
                        "project1 project1"
                        "project2 project3"
@@ -163,19 +153,9 @@ main h2 {
   grid-area: project5;
 }
 
-article {
-  position: relative;
-  overflow: hidden;
-}
-
-article img {
-  width: 100%;
-  height: auto;
-}
-
 .project-textbox{
   background-color: var(--colour-light);
-  padding: 2%;
+  padding: 0.5em;
   position: absolute;
   bottom: var(--small-font);
   left: var(--smedium-font);
@@ -191,23 +171,42 @@ article img {
   font-size: 60%;
 }
 
+article {
+  position: relative;
+  overflow: hidden;
+}
+
+article img {
+  width: 100%;
+  height: auto;
+}
+
+/* set up contacts area */
 .contacts {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-/* adaptations for other sizes*/
-@media only screen and (max-width: 400px) {
-  
+/* adaptations for mobile size*/
+@media only screen and (max-width: 600px) {
+
+  :root{ /*reset variables to be used throughout the CSS*/
+    --big-font: 2.2rem;
+    --medium-font: 1.8rem;
+    --small-font: 0.3rem;
+  }
+
   header{
     align-items: center;
     flex-direction: column;
-    gap: var(--small-font);
+    gap: 0;
   }
 
   header h1{
     padding: 0;
+    width: 100%;
+    text-align: center;
   }
 
   nav{
@@ -226,8 +225,18 @@ article img {
       flex-direction: column;
   }
 
+  .projects { /* divider */
+    height: calc(10*var(--big-font));
+    gap: 2%;
+    grid-template-areas: "project1"
+                         "project2"
+                         "project3"
+                         "project4"
+                         "project5";
+  }
+  
   .contacts {
-    align-items: center;
+    width: 100%;
     flex-direction: column;
   }
 }
